@@ -1,0 +1,30 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[requires]
+python_version = "3.8"
+
+# FIXME: need to include src.common
+[packages]
+common = {editable = true, path = "src/common"}
+aws-xray-sdk = "*"
+
+[dev-packages]
+flake8 = "*"
+moto = "*"
+mypy = "*"
+pylint = "*"
+pytest = "*"
+pytest-cov = "*"
+pytest-mock = "*"
+pytest-pylint = "*"
+tox = "*"
+
+[scripts]
+#install-lambda-functions = "pipenv install -r src/requirements.txt"
+test = "pytest --cov src --cov-report term-missing --cov-fail-under 95 tests/unit"
+flake8 = "flake8"
+lint = "pylint"
+
