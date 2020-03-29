@@ -5,11 +5,12 @@ verify_ssl = true
 
 [requires]
 python_version = "3.8"
-
 # FIXME: need to include src.common
+
 [packages]
 common = {editable = true, path = "src/common"}
 aws-xray-sdk = "*"
+boto3 = "*"
 
 [dev-packages]
 flake8 = "*"
@@ -21,10 +22,10 @@ pytest-cov = "*"
 pytest-mock = "*"
 pytest-pylint = "*"
 tox = "*"
+boto3-stubs = { extras = [ "lambda", "dynamodb", "kinesis", "s3", "sns", "sqs", "ssm", "xray" ], version = "*"}
 
 [scripts]
 #install-lambda-functions = "pipenv install -r src/requirements.txt"
 test = "pytest --cov src --cov-report term-missing --cov-fail-under 95 tests/unit"
 flake8 = "flake8"
 lint = "pylint"
-
