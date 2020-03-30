@@ -9,12 +9,10 @@ python_version = "3.8"
 
 [packages]
 common = {editable = true, path = "src/common"}
-aws-xray-sdk = "*"
 boto3 = "*"
 
 [dev-packages]
 flake8 = "*"
-moto = "*"
 mypy = "*"
 pylint = "*"
 pytest = "*"

@@ -3,13 +3,6 @@ import json
 import logging
 import os
 
-# AWS X-RAY
-from aws_xray_sdk.core import xray_recorder
-from aws_xray_sdk.core import patch_all
-# Only instrument libraries if not running locally
-if "AWS_SAM_LOCAL" not in os.environ:
-    patch_all()
-
 
 # This path reflects the packaged path and not repo path to the common
 # package for this service.
