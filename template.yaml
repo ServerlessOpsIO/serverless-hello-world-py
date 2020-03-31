@@ -111,9 +111,6 @@ Resources:
         #  KeyType: "RANGE"
       BillingMode: "PAY_PER_REQUEST"
 
-  CloudWatchTopic:
-    Type: AWS::SNS::Topic
-
 
 Outputs:
 
@@ -133,12 +130,4 @@ Outputs:
     Export:
       Name:
         Fn::Sub: "${AWS::StackName}-DynamoDBTableName"
-
-  CloudWatchTopicArn:
-    Description: "ARN of CloudWatch topic"
-    Value:
-      Ref: CloudWatchTopic
-    Export:
-      Name:
-        Fn::Sub: "${AWS::StackName}-CloudWatchTopicArn"
 
