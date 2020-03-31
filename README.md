@@ -10,6 +10,8 @@ Serverless Hello World Python sample service
 ├── Pipfile
 ├── README.md
 ├── events
+│   ├── CreateMessageItem-event.json
+│   └── CreateMessageItem-msg.json
 ├── pytest.ini
 ├── src
 │   ├── common

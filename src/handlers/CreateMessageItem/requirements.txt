@@ -1,2 +1,4 @@
 # This must be specified from the root of the project for SAM
 -e src/common/
+
+boto3
