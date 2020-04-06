@@ -1,0 +1,107 @@
+{
+    "resource": "/message/{message_id}",
+    "path": "/message/2c9ab442-fb17-42f3-b197-004daae239a2",
+    "httpMethod": "GET",
+    "headers": {
+        "Accept": "*/*",
+        "CloudFront-Forwarded-Proto": "https",
+        "CloudFront-Is-Desktop-Viewer": "true",
+        "CloudFront-Is-Mobile-Viewer": "false",
+        "CloudFront-Is-SmartTV-Viewer": "false",
+        "CloudFront-Is-Tablet-Viewer": "false",
+        "CloudFront-Viewer-Country": "US",
+        "Host": "sooy1683f3.execute-api.us-east-1.amazonaws.com",
+        "User-Agent": "curl/7.54.0",
+        "Via": "2.0 b45a69a5045b8813964c4110841f77f7.cloudfront.net (CloudFront)",
+        "X-Amz-Cf-Id": "tNi_g4cnIFMaxlWZNXAczKPOH8KIn9uMrc_oURerPRdI7ZDYPogAjg==",
+        "X-Amzn-Trace-Id": "Root=1-5e8b8eea-9e39981a01edb46c8646d9c2",
+        "X-Forwarded-For": "143.115.159.157, 70.132.43.159",
+        "X-Forwarded-Port": "443",
+        "X-Forwarded-Proto": "https"
+    },
+    "multiValueHeaders": {
+        "Accept": [
+            "*/*"
+        ],
+        "CloudFront-Forwarded-Proto": [
+            "https"
+        ],
+        "CloudFront-Is-Desktop-Viewer": [
+            "true"
+        ],
+        "CloudFront-Is-Mobile-Viewer": [
+            "false"
+        ],
+        "CloudFront-Is-SmartTV-Viewer": [
+            "false"
+        ],
+        "CloudFront-Is-Tablet-Viewer": [
+            "false"
+        ],
+        "CloudFront-Viewer-Country": [
+            "US"
+        ],
+        "Host": [
+            "sooy1683f3.execute-api.us-east-1.amazonaws.com"
+        ],
+        "User-Agent": [
+            "curl/7.54.0"
+        ],
+        "Via": [
+            "2.0 b45a69a5045b8813964c4110841f77f7.cloudfront.net (CloudFront)"
+        ],
+        "X-Amz-Cf-Id": [
+            "tNi_g4cnIFMaxlWZNXAczKPOH8KIn9uMrc_oURerPRdI7ZDYPogAjg=="
+        ],
+        "X-Amzn-Trace-Id": [
+            "Root=1-5e8b8eea-9e39981a01edb46c8646d9c2"
+        ],
+        "X-Forwarded-For": [
+            "143.115.159.157, 70.132.43.159"
+        ],
+        "X-Forwarded-Port": [
+            "443"
+        ],
+        "X-Forwarded-Proto": [
+            "https"
+        ]
+    },
+    "queryStringParameters": null,
+    "multiValueQueryStringParameters": null,
+    "pathParameters": {
+        "message_id": "2c9ab442-fb17-42f3-b197-004daae239a2"
+    },
+    "stageVariables": null,
+    "requestContext": {
+        "resourceId": "67knf5",
+        "resourcePath": "/message/{message_id}",
+        "httpMethod": "GET",
+        "extendedRequestId": "KlNErFx-oAMFQnA=",
+        "requestTime": "06/Apr/2020:20:19:54 +0000",
+        "path": "/prod/message/2c9ab442-fb17-42f3-b197-004daae239a2",
+        "accountId": "355364402302",
+        "protocol": "HTTP/1.1",
+        "stage": "prod",
+        "domainPrefix": "sooy1683f3",
+        "requestTimeEpoch": 1586204394636,
+        "requestId": "f1132605-b085-42d5-8346-236d1d8f835d",
+        "identity": {
+            "cognitoIdentityPoolId": null,
+            "accountId": null,
+            "cognitoIdentityId": null,
+            "caller": null,
+            "sourceIp": "143.115.159.157",
+            "principalOrgId": null,
+            "accessKey": null,
+            "cognitoAuthenticationType": null,
+            "cognitoAuthenticationProvider": null,
+            "userArn": null,
+            "userAgent": "curl/7.54.0",
+            "user": null
+        },
+        "domainName": "sooy1683f3.execute-api.us-east-1.amazonaws.com",
+        "apiId": "sooy1683f3"
+    },
+    "body": null,
+    "isBase64Encoded": false
+}

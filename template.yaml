@@ -98,6 +98,44 @@ Resources:
           Properties:
             Topic: !Ref DDBItemTopic
 
+  RetrieveMessageItem:
+    Type: AWS::Serverless::Function
+    Properties:
+      Description: "Get message item in DDB"
+      CodeUri: src/handlers/RetrieveMessageItem
+      Handler: function.handler
+      Runtime: python3.8
+      MemorySize: 128
+      Timeout: 3
+      Policies:
+        - Statement:
+          - Effect: "Allow"
+            Action:
+              - "ssm:GetParameter"
+            Resource: !Sub "arn:aws:ssm:${AWS::Region}:${AWS::AccountId}:parameter/${ServiceName}/${ServiceEnv}/*"
+        - Statement:
+          - Effect: "Allow"
+            Action:
+              - "dynamodb:GetItem"
+            Resource:
+              Fn::GetAtt:
+                - DynamoDBTable
+                - Arn
+      Environment:
+        Variables:
+          DDB_TABLE_NAME: !Ref DynamoDBTable
+      Events:
+        ApiGateway:
+          Type: Api
+          Properties:
+            Path: /message/{message_id}
+            Method: GET
+            RestApiId: !Ref ApiGatewayApi
+
+  ApiGatewayApi:
+    Type: AWS::Serverless::Api
+    Properties:
+      StageName: prod
 
   DynamoDBTable:
     Type: AWS::DynamoDB::Table
@@ -144,4 +182,12 @@ Outputs:
     Export:
       Name:
         Fn::Sub: "${AWS::StackName}-DynamoDBTableName"
+
+  RestApiUrl:
+    Description: "URL of REST API"
+    Value:
+      Fn::Sub: "https://${ApiGatewayApi}.execute-api.${AWS::Region}.amazonaws.com/prod"
+    Export:
+      Name:
+        Fn::Sub: "${AWS::StackName}-RestApiUrl"
 
