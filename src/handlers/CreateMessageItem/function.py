@@ -34,8 +34,8 @@ def _create_item(item: dict) -> dict:
     dt = datetime.utcnow()
     dt_ttl = dt.replace(year=dt.year + 1)
     item['pk'] = str(uuid4())
-    item['timestamp'] = str(int(dt.timestamp() * 1000))
-    item['ttl'] = int(dt_ttl.timestamp() * 1000)
+    item['timestamp'] = int(dt.timestamp())
+    item['ttl'] = int(dt_ttl.timestamp())
 
     return _put_ddb_item(item)
 
