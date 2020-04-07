@@ -12,7 +12,9 @@ Serverless Hello World Python sample service
 ├── events
 │   ├── CreateMessageItem-event.json
 │   ├── CreateMessageItem-msg.json
-│   └── RetrieveMessageItem-event.json
+│   ├── RetrieveMessageItem-event.json
+│   ├── UpdateMessageItem-event.json
+│   └── UpdateMessageItem-msg.json
 ├── pytest.ini
 ├── src
 │   ├── common
@@ -25,7 +27,11 @@ Serverless Hello World Python sample service
 │       │   ├── __init__.py
 │       │   ├── function.py
 │       │   └── requirements.txt
-│       └── RetrieveMessageItem
+│       ├── RetrieveMessageItem
+│       │   ├── __init__.py
+│       │   ├── function.py
+│       │   └── requirements.txt
+│       └── UpdateMessageItem
 │           ├── __init__.py
 │           ├── function.py
 │           └── requirements.txt
@@ -41,6 +47,8 @@ Serverless Hello World Python sample service
     │           │   └── test_handler.py
     │           ├── RetrieveMessageItem
     │           │   └── test_handler.py
+    │           ├── UpdateMessageItem
+    │           │   └── test_handler.py
     │           └── __init__.py
     └── unit
         ├── __init__.py
@@ -50,6 +58,8 @@ Serverless Hello World Python sample service
                 ├── CreateMessageItem
                 │   └── test_handler.py
                 ├── RetrieveMessageItem
+                │   └── test_handler.py
+                ├── UpdateMessageItem
                 │   └── test_handler.py
                 └── __init__.py
 ```
