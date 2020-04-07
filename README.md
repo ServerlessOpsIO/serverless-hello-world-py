@@ -12,6 +12,8 @@ Serverless Hello World Python sample service
 ├── events
 │   ├── CreateMessageItem-event.json
 │   ├── CreateMessageItem-msg.json
+│   ├── DeleteMessageItem-event.json
+│   ├── DeleteMessageItem-msg.json
 │   ├── RetrieveMessageItem-event.json
 │   ├── UpdateMessageItem-event.json
 │   └── UpdateMessageItem-msg.json
@@ -24,6 +26,10 @@ Serverless Hello World Python sample service
 │   │   └── setup.py
 │   └── handlers
 │       ├── CreateMessageItem
+│       │   ├── __init__.py
+│       │   ├── function.py
+│       │   └── requirements.txt
+│       ├── DeleteMessageItem
 │       │   ├── __init__.py
 │       │   ├── function.py
 │       │   └── requirements.txt
@@ -45,6 +51,8 @@ Serverless Hello World Python sample service
     │       └── handlers
     │           ├── CreateMessageItem
     │           │   └── test_handler.py
+    │           ├── DeleteMessageItem
+    │           │   └── test_handler.py
     │           ├── RetrieveMessageItem
     │           │   └── test_handler.py
     │           ├── UpdateMessageItem
@@ -56,6 +64,8 @@ Serverless Hello World Python sample service
             ├── __init__.py
             └── handlers
                 ├── CreateMessageItem
+                │   └── test_handler.py
+                ├── DeleteMessageItem
                 │   └── test_handler.py
                 ├── RetrieveMessageItem
                 │   └── test_handler.py

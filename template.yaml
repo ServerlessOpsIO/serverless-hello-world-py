@@ -170,6 +170,41 @@ Resources:
               Function:
                 - UpdateMessageItem
 
+  DeleteMessageItem:
+    Type: AWS::Serverless::Function
+    Properties:
+      Description: "Delete message item in DDB"
+      CodeUri: src/handlers/DeleteMessageItem
+      Handler: function.handler
+      Runtime: python3.8
+      MemorySize: 128
+      Timeout: 3
+      Policies:
+        - Statement:
+          - Effect: "Allow"
+            Action:
+              - "ssm:GetParameter"
+            Resource: !Sub "arn:aws:ssm:${AWS::Region}:${AWS::AccountId}:parameter/${ServiceName}/${ServiceEnv}/*"
+        - Statement:
+          - Effect: "Allow"
+            Action:
+              - "dynamodb:DeleteItem"
+            Resource:
+              Fn::GetAtt:
+                - DynamoDBTable
+                - Arn
+      Environment:
+        Variables:
+          DDB_TABLE_NAME: !Ref DynamoDBTable
+      Events:
+        SnsTopic:
+          Type: SNS
+          Properties:
+            Topic: !Ref DDBItemTopic
+            FilterPolicy:
+              Function:
+                - DeleteMessageItem
+
   ApiGatewayApi:
     Type: AWS::Serverless::Api
     Properties:
