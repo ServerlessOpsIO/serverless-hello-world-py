@@ -2,6 +2,8 @@
 
 Serverless Hello World Python sample service
 
+[![logo](diagram.png "Application diagram")](https://drive.google.com/file/d/1V_0zd3Xrfaf9VSIae6fweY6o49UZSkWo/view?usp=sharing)
+
 
 ```bash
 .
