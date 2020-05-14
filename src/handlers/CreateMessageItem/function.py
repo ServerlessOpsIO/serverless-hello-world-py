@@ -21,14 +21,6 @@ ddb_res = boto3.resource('dynamodb')
 ddb_table = ddb_res.Table(DDB_TABLE_NAME)
 
 
-def _put_ddb_item(item: dict) -> dict:
-    '''Put item into DDB'''
-    r = ddb_table.put_item(
-        Item=item
-    )
-    return r
-
-
 def _create_item(item: dict) -> dict:
     '''Transform item to put into DDB'''
     dt = datetime.utcnow()
@@ -37,7 +29,13 @@ def _create_item(item: dict) -> dict:
     item['timestamp'] = int(dt.timestamp())
     item['ttl'] = int(dt_ttl.timestamp())
 
-    return _put_ddb_item(item)
+    r = ddb_table.put_item(
+        Item=item
+    )
+    _logger.debug('DDB Put response: {}'.format(r))
+
+    return {'message_id': item['pk']}
+
 
 
 def handler(event, context):
