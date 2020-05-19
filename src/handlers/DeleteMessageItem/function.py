@@ -23,7 +23,8 @@ def _delete_item(item: dict) -> dict:
     '''Delete item in DDB'''
     r = ddb_table.delete_item(
         Key={
-            'pk': item.get('message_id')
+            'pk': item.get('message_id'),
+            'sk': 'v0'
         },
     )
     return r

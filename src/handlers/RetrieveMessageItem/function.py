@@ -23,6 +23,7 @@ def _retrieve_item(message_id: str) -> dict:
     r = ddb_table.get_item(
         Key={
             'pk': message_id,
+            'sk': 'v0'
         }
     )
     _logger.debug('DDB Get response: {}'.format(r))

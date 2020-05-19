@@ -30,6 +30,7 @@ def _update_item(item: dict) -> dict:
     r = ddb_table.update_item(
         Key={
             'pk': message_id
+            'sk': 'v0'
         },
         AttributeUpdates=attribute_updates
     )

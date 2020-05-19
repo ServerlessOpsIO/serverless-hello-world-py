@@ -26,6 +26,7 @@ def _create_item(item: dict) -> dict:
     dt = datetime.utcnow()
     dt_ttl = dt.replace(year=dt.year + 1)
     item['pk'] = str(uuid4())
+    item['sk'] = 'v0'
     item['timestamp'] = int(dt.timestamp())
     item['ttl'] = int(dt_ttl.timestamp())
 
