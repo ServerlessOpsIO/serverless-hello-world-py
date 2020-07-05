@@ -71,7 +71,7 @@ Resources:
     Properties:
       Description: "Put message item in DDB"
       CodeUri: src/handlers/CreateMessageItem
-      Handler: function.handler
+      Handler: __init__.handler
       Runtime: python3.8
       MemorySize: 128
       Timeout: 3
@@ -106,7 +106,7 @@ Resources:
     Properties:
       Description: "Get message item in DDB"
       CodeUri: src/handlers/RetrieveMessageItem
-      Handler: function.handler
+      Handler: __init__.handler
       Runtime: python3.8
       MemorySize: 128
       Timeout: 3
@@ -140,7 +140,7 @@ Resources:
     Properties:
       Description: "Update message item in DDB"
       CodeUri: src/handlers/UpdateMessageItem
-      Handler: function.handler
+      Handler: __init__.handler
       Runtime: python3.8
       MemorySize: 128
       Timeout: 3
@@ -175,7 +175,7 @@ Resources:
     Properties:
       Description: "Delete message item in DDB"
       CodeUri: src/handlers/DeleteMessageItem
-      Handler: function.handler
+      Handler: __init__.handler
       Runtime: python3.8
       MemorySize: 128
       Timeout: 3
